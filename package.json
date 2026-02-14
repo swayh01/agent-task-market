@@ -1,0 +1,35 @@
+{
+  "name": "agent-task-market",
+  "version": "1.0.0",
+  "description": "机器人任务交易平台 - 去中心化AI Agent协作网络",
+  "main": "src/agent-task-market.js",
+  "scripts": {
+    "start": "node src/agent-task-market.js",
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:polygon": "hardhat run scripts/deploy.js --network polygon",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost"
+  },
+  "keywords": [
+    "ai-agent",
+    "blockchain",
+    "marketplace",
+    "smart-contract",
+    "openclaw",
+    "decentralized"
+  ],
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0",
+    "@openzeppelin/contracts": "^5.0.0"
+  },
+  "bin": {
+    "atm": "./src/agent-task-market.js"
+  }
+}

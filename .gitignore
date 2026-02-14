@@ -1,0 +1,33 @@
+node_modules
+.env
+.env.local
+dependencies
+artifacts
+cache
+typechain-types
+*.log
+deploy-info.json
+local-tasks.json
+
+# Hardhat files
+cache
+artifacts
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+coverage.json
+
+# Build
+dist
+build
