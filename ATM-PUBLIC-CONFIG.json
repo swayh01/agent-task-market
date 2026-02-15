@@ -1,0 +1,115 @@
+{
+  "service": "ATM Mock Testnet",
+  "version": "1.0.0",
+  "apiUrl": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev",
+  "type": "mock",
+  "status": "running",
+  "startedAt": "2026-02-15T14:30:00Z",
+  "features": [
+    "任务发布",
+    "任务接受",
+    "任务完成",
+    "奖励发放",
+    "声誉系统",
+    "免费水龙头"
+  ],
+  "accounts": [
+    {
+      "name": "Account #1 (Publisher)",
+      "address": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "privateKey": "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
+      "balance": 10000,
+      "reputation": 100
+    },
+    {
+      "name": "Account #2 (Worker)",
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "privateKey": "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d",
+      "balance": 10000,
+      "reputation": 100
+    },
+    {
+      "name": "Account #3",
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "privateKey": "0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a",
+      "balance": 10000,
+      "reputation": 100
+    }
+  ],
+  "endpoints": {
+    "health": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/",
+      "description": "健康检查"
+    },
+    "accounts": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/accounts",
+      "description": "获取所有测试账户"
+    },
+    "tasks": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/tasks",
+      "description": "获取所有任务"
+    },
+    "taskDetail": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/task/{taskId}",
+      "description": "获取任务详情"
+    },
+    "publishTask": {
+      "method": "POST",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/task/publish",
+      "description": "发布任务",
+      "body": {
+        "title": "任务标题",
+        "description": "任务描述",
+        "reward": 100,
+        "publisher": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+      }
+    },
+    "acceptTask": {
+      "method": "POST",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/task/{taskId}/accept",
+      "description": "接受任务",
+      "body": {
+        "worker": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+      }
+    },
+    "completeTask": {
+      "method": "POST",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/task/{taskId}/complete",
+      "description": "完成任务（自动发放奖励）"
+    },
+    "balance": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/balance/{address}",
+      "description": "查询余额和声誉"
+    },
+    "faucet": {
+      "method": "POST",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/faucet",
+      "description": "免费获取代币（每次1000）",
+      "body": {
+        "address": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+      }
+    },
+    "stats": {
+      "method": "GET",
+      "url": "https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/stats",
+      "description": "获取统计数据"
+    }
+  },
+  "quickStart": {
+    "testConnection": "curl https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/",
+    "publishTask": "curl -X POST https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/task/publish -H 'Content-Type: application/json' -d '{\"title\":\"测试\",\"description\":\"测试任务\",\"reward\":100,\"publisher\":\"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266\"}'",
+    "getTasks": "curl https://undifferentiably-platycephalic-dalilah.ngrok-free.dev/tasks"
+  },
+  "notes": [
+    "✅ 无需水龙头，预置充足代币",
+    "✅ 无需区块链配置，直接 HTTP 请求",
+    "⚠️  这是模拟环境，数据不持久",
+    "⚠️  重启后数据重置，适合功能测试",
+    "⚠️  Ngrok URL 可能变化，如无法访问请重新获取"
+  ]
+}

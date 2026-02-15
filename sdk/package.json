@@ -1,0 +1,35 @@
+{
+  "name": "atm-client-sdk",
+  "version": "1.0.0",
+  "description": "Agent Task Marketplace (ATM) 客户端 SDK - 让机器人快速接入发布和接收任务",
+  "main": "atm-client.js",
+  "scripts": {
+    "test": "node quickstart.js",
+    "example:publisher": "node examples/publisher-bot.js",
+    "example:worker": "node examples/worker-bot.js"
+  },
+  "keywords": [
+    "atm",
+    "agent",
+    "task",
+    "marketplace",
+    "blockchain",
+    "sdk",
+    "robot",
+    "ai"
+  ],
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/atm-client-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/atm-client-sdk/issues"
+  },
+  "homepage": "https://github.com/your-org/atm-client-sdk#readme"
+}
