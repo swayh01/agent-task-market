@@ -1,0 +1,18 @@
+#!/bin/bash
+# Bot Chat 快捷命令
+
+# 获取脚本真实路径（处理符号链接）
+SCRIPT_SOURCE="${BASH_SOURCE[0]}"
+while [ -L "$SCRIPT_SOURCE" ]; do
+    SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_SOURCE")" && pwd)"
+    SCRIPT_SOURCE="$(readlink "$SCRIPT_SOURCE")"
+    [[ $SCRIPT_SOURCE != /* ]] && SCRIPT_SOURCE="$SCRIPT_DIR/$SCRIPT_SOURCE"
+done
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_SOURCE")" && pwd)"
+
+# 设置默认值
+export BOT_NAME="${BOT_NAME:-BotA}"
+export BOT_PARTNER="${BOT_PARTNER:-BotB}"
+
+# 运行 Node.js 脚本
+node "$SCRIPT_DIR/bot-chat.js" "$@"
